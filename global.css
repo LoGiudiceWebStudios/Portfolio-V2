@@ -5,14 +5,116 @@
 }
 html,
 body {
+  width: 100vw;
   margin: 0px;
   height: 100%;
 }
+
+
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #BABABA;
+  --background-color: #000000;
+  --card-background-color: hsla(0, 0%, 100%, 0.1);
+  --text-color: #333333;
+  --font-main: "Lexend Deca", sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-regular: 400;
+  --font-weight-black: 900;
+  --spacing-unit: 3vw;
+
+  --btn-bg-primary: #208BC3;
+  --btn-bg-primary-hover: #156b9d;
+}
+
+/* Button Styles */ 
+
+button{
+  color: var(--primary-color);
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-extralight);
+  font-style: normal;
+  font-size: clamp(1rem, 1.5vw, 25px);
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 44px;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
+  min-width: fit-content;
+  height: auto;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary{
+  border: none;
+  background: var(--btn-bg-primary);
+}
+
+.btn-secondary{
+  background: none;
+  border: 1px solid white;
+}
+
+/* Laptop (schermi fino a 1440px) */
+@media (max-width: 1440px) {
+  button {
+    font-size: clamp(0.9rem, 1.3vw, 20px);
+    padding: clamp(0.65rem, 1.8vw, 0.9rem) clamp(1.3rem, 3.5vw, 2rem);
+    border-radius: 38px;
+  }
+}
+
+/* Tablet (schermi fino a 768px) */
+@media (max-width: 768px) {
+  button {
+    font-size: clamp(0.85rem, 2vw, 18px);
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1.2rem, 3vw, 1.5rem);
+    border-radius: 32px;
+  }
+}
+
+/* Mobile (schermi fino a 480px) */
+@media (max-width: 480px) {
+  button {
+    font-size: clamp(0.75rem, 3vw, 16px);
+    padding: clamp(0.5rem, 1.2vw, 0.7rem) clamp(1rem, 2.5vw, 1.3rem);
+    border-radius: 28px;
+  }
+}
+
+
+
+
+
 /* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
+ .btn-primary:hover{
+  background-color: var(--btn-bg-primary-hover);
 }
 a {
   text-decoration: none;
 }
+
+
+/* Section Styles */
+section{
+  padding: clamp(2rem, 5vw, 6rem) clamp(1.5rem, 5vw, 8rem);
+  background-color: var(--section-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-unit);
+}
+
+
+.section-header{
+  color: var(--primary-color);
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-thin);
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(2.5rem, 5.2vw, 100px);
+}
+
