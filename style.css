@@ -90,6 +90,11 @@ header .glare-effect{
 
 /* Tablet (schermi fino a 768px) */
 @media (max-width: 768px) {
+
+  nav{
+    padding: clamp(1rem, 3vw, 4rem) clamp(1.5rem, 5vw, 8rem);
+  }
+
   header{
     display: flex;
     flex-direction: column;
@@ -111,10 +116,16 @@ header .glare-effect{
     width: 80%;
   }
 
-  #projects{
-    z-index: -1;
-    top: -50%;
+  header .glare-effect{
+    display: none;
   }
+
+  #projects .project-card:hover{
+  transform: none;
+  box-shadow: none;
+}
+
+
 }
 
 /* Mobile (schermi fino a 480px) */
@@ -122,6 +133,7 @@ header .glare-effect{
   header .front-image > img{
     max-width: clamp(200px, 70vw, 300px);
   }
+
 }
 
 
