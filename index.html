@@ -1,110 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoGiuduce Webstudios - Portfolio</title>
-  
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-  
 
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="style.css">
-  
-    <!-- SCRIPTS -->
-    <script src="script.js" defer></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoGiuduce Webstudios - Portfolio</title>
 
-  <body>
-    <nav>
-      <button class="btn-secondary">MENU</button>
-    </nav>
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 
-    <header> 
-      <div class="front-content">
-        <div class="front-text"><span>crafting</span> code,<br>creating impact.</div>
-        <div class="front-subtext">Blending aesthetics and technology to craft web solutions that meet your needs.</div>
-        <div class="front-buttons">
-          <button class="btn-primary" data-scroll-to="projects">VIEW WORK</button>
-          <button class="btn-secondary" data-scroll-to="contact">CONTACT ME</button>
+
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- SCRIPTS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">LoGiuduce Webstudios</div>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="front-content">
+      <div class="front-text"><span>crafting</span> code,<br>creating impact.</div>
+      <div class="front-subtext">Blending aesthetics and technology to craft web solutions that meet your needs.</div>
+      <div class="front-buttons">
+        <button class="btn-primary" data-scroll-to="projects">VIEW WORK</button>
+        <button class="btn-secondary" data-scroll-to="contact">CONTACT ME</button>
+      </div>
+    </div>
+
+    <div class="front-image">
+      <img src="assets/mockup-nobg-reduced.png" alt="Front Image">
+    </div>
+
+    <div class="glare-effect"></div>
+  </header>
+
+  <section id="projects">
+    <div class="section-header">my projects</div>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
+        <div class="project-info">
+          <div class="project-title">Project Title</div>
+          <div class="project-description">Brief description of the project goes here.</div>
+          <button class="btn-primary">VIEW PROJECT</button>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
+        <div class="project-info">
+          <div class="project-title">Project Title</div>
+          <div class="project-description">Brief description of the project goes here.</div>
+          <button class="btn-primary">VIEW PROJECT</button>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
+        <div class="project-info">
+          <div class="project-title">Project Title</div>
+          <div class="project-description">Brief description of the project goes here.</div>
+          <button class="btn-primary">VIEW PROJECT</button>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
+        <div class="project-info">
+          <div class="project-title">Project Title</div>
+          <div class="project-description">Brief description of the project goes here.</div>
+          <button class="btn-primary">VIEW PROJECT</button>
         </div>
       </div>
 
-      <div class="front-image">
-        <img src="assets/mockup-nobg-reduced.png" alt="Front Image">
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-header">GET IN TOUCH</div>
+    <div class="section-subtext">Get a response within 24 hours</div>
+    <form class="contact-form" action="https://formsubmit.co/logiudice.webstudios@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+      <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+      <textarea name="message" placeholder="Your Message" class="contact-textarea" required></textarea>
+      <button type="submit" class="btn-primary">SEND MESSAGE</button>
+    </form>
+    <div class="contact-info">
+      <div class="contact-info-header">Contact Information</div>
+      <div class="contact-item">
+        <strong>Email:</strong> info@logiuducewebstudios.com
       </div>
-      
-      <div class="glare-effect"></div>
-    </header>
 
-    <section  id="projects">
-      <div class="section-header">MY PROJECTS</div>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
-          <div class="project-info">
-            <div class="project-title">Project Title</div>
-            <div class="project-description">Brief description of the project goes here.</div>
-            <button class="btn-primary">VIEW PROJECT</button>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
-          <div class="project-info">
-            <div class="project-title">Project Title</div>
-            <div class="project-description">Brief description of the project goes here.</div>
-            <button class="btn-primary">VIEW PROJECT</button>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
-          <div class="project-info">
-            <div class="project-title">Project Title</div>
-            <div class="project-description">Brief description of the project goes here.</div>
-            <button class="btn-primary">VIEW PROJECT</button>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-image"><img src="assets/project1.png" alt="Project 1"></div>
-          <div class="project-info">
-            <div class="project-title">Project Title</div>
-            <div class="project-description">Brief description of the project goes here.</div>
-            <button class="btn-primary">VIEW PROJECT</button>
-          </div>
-        </div>
-        
+      <div class="contact-item">
+        <strong>Phone:</strong> +1 (123) 456-7890
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <div class="section-header">GET IN TOUCH</div>
-      <div class="section-subtext">Get a response within 24 hours</div>
-      <form class="contact-form" action="https://formsubmit.co/logiudice.webstudios@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
-        <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
-        <textarea name="message" placeholder="Your Message" class="contact-textarea" required></textarea>
-        <button type="submit" class="btn-primary">SEND MESSAGE</button>
-      </form>
-      <div class="contact-info">
-        <div class="contact-info-header">Contact Information</div>
-        <div class="contact-item">
-          <strong>Email:</strong> info@logiuducewebstudios.com
-        </div>
+  <footer>
+    &copy; 2024 LoGiuduce Webstudios. All rights reserved.
+  </footer>
 
-        <div class="contact-item">
-          <strong>Phone:</strong> +1 (123) 456-7890
-        </div>
-      </div>
-    </section>
+</body>
 
-    <footer>
-      &copy; 2024 LoGiuduce Webstudios. All rights reserved.
-    </footer>
-
-  </body>
 </html>

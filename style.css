@@ -1,4 +1,4 @@
-body{
+body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--font-family);
@@ -8,23 +8,45 @@ body{
   overflow-x: hidden;
 }
 
-nav{
-  display: none;
+nav {
+  position: fixed;
+  margin: 0 auto;
+
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.17);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.9px);
+  -webkit-backdrop-filter: blur(5.9px);
+
+  width: 100vw;
+  height: var(--nav-height);
+  /* <-- usa la variabile */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  font-family: var(--font-main);
+  color: white;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 2rem;
 }
 
 
 
 /* Header Styles */
 
-header{
+header {
+  /* tieni la navbar in considerazione: spingi il contenuto sotto e mantieni l'altezza visibile */
+  padding-top: var(--nav-height);
+  min-height: calc(90vh - var(--nav-height));
   width: 100vw;
-  height: 100vh;
 }
 
-header .front-content{
+header .front-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -34,7 +56,7 @@ header .front-content{
   padding: clamp(1rem, 3vw, 4rem) clamp(1.5rem, 5vw, 8rem);
 }
 
-header .front-text{
+header .front-text {
   color: var(--primary-color);
   font-size: clamp(2rem, 5vw, 64px);
   font-family: var(--font-main);
@@ -44,14 +66,14 @@ header .front-text{
   line-height: 150%;
 }
 
-header .front-text > span{
+header .front-text>span {
   background: linear-gradient(90deg, #157DC1 -1.52%, #6DE8CE 19.87%, #B87CFA 41.26%);
   background-clip: text;
-  -webkit-background-clip : text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-header .front-subtext{
+header .front-subtext {
   color: var(--secondary-color);
   font-size: clamp(1rem, 2.5vw, 20px);
   font-family: var(--font-main);
@@ -62,10 +84,10 @@ header .front-subtext{
   width: 50%;
 }
 
-header .front-image > img{
-  z-index: 0;
+header .front-image>img {
+  z-index: 1;
   position: absolute;
-  top: 0;
+  top: 5%;
   left: clamp(1rem, 61.8vw, 1187px);
   width: 100%;
   max-width: min(600px, calc(100vw - clamp(1rem, 61.8vw, 1187px) - 2rem));
@@ -74,7 +96,12 @@ header .front-image > img{
   object-fit: cover;
 }
 
-header .glare-effect{
+header .front-buttons {
+  display: flex;
+  gap: calc(var(--spacing-unit) / 2);
+}
+
+header .glare-effect {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -92,46 +119,46 @@ header .glare-effect{
 /* Tablet (schermi fino a 768px) */
 @media (max-width: 768px) {
 
-  nav{
+  nav {
     padding: clamp(1rem, 3vw, 4rem) clamp(1.5rem, 5vw, 8rem);
   }
 
-  header{
+  header {
     display: flex;
     flex-direction: column;
   }
 
-  header .front-image{
+  header .front-image {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  header .front-image > img{
+  header .front-image>img {
     position: relative;
     left: 0;
     max-width: clamp(250px, 60vw, 400px);
   }
 
-  header .front-content .front-subtext{
+  header .front-content .front-subtext {
     width: 80%;
   }
 
-  header .glare-effect{
+  header .glare-effect {
     display: none;
   }
 
-  #projects .project-card:hover{
-  transform: none;
-  box-shadow: none;
-}
+  #projects .project-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 
 
 }
 
 /* Mobile (schermi fino a 480px) */
 @media (max-width: 480px) {
-  header .front-image > img{
+  header .front-image>img {
     max-width: clamp(200px, 70vw, 300px);
   }
 
@@ -140,8 +167,17 @@ header .glare-effect{
 
 
 /* Project Section */
+#projects {
+  background-color: white;
+}
 
-#projects .projects-grid{
+#projects .section-header {
+  color: black;
+  font-weight: var(--font-weight-regular);
+  text-transform: capitalize;
+}
+
+#projects .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
   max-width: 1600px;
@@ -157,7 +193,7 @@ header .glare-effect{
   }
 }
 
-#projects .project-card{
+#projects .project-card {
   width: 100%;
   max-width: clamp(300px, 40.3vw, 774px);
   height: auto;
@@ -172,20 +208,22 @@ header .glare-effect{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#projects .project-card:hover{
+#projects .project-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--card-box-shadow-hover);
 }
 
-#projects .project-card .project-image{
+#projects .project-card .project-image {
   padding: 5%;
 }
-#projects .project-card img{
+
+#projects .project-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-#projects .project-card .project-info{
+
+#projects .project-card .project-info {
   padding: clamp(1rem, 2vw, 2rem);
   flex-grow: 1;
   display: flex;
@@ -195,14 +233,14 @@ header .glare-effect{
   color: var(--primary-color);
 }
 
-#projects .project-card .project-info .project-title{
+#projects .project-card .project-info .project-title {
   font-size: clamp(1.25rem, 2.5vw, 24px);
   font-weight: var(--font-weight-regular);
   margin-bottom: clamp(0.5rem, 1vw, 1rem);
   text-transform: uppercase;
 }
-  
-#projects .project-card .project-info .project-description{
+
+#projects .project-card .project-info .project-description {
   font-size: clamp(1rem, 2vw, 18px);
   font-weight: var(--font-weight-extralight);
   margin-bottom: var(--spacing-unit);
@@ -210,7 +248,7 @@ header .glare-effect{
 
 /* Contact Section */
 
-#contact .contact-form{
+#contact .contact-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -218,18 +256,18 @@ header .glare-effect{
 }
 
 #contact .contact-form input,
-#contact .contact-form textarea{
+#contact .contact-form textarea {
   width: 80%;
 }
 
-#contact .contact-info{
+#contact .contact-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-unit);
 }
 
-#contact .contact-info .contact-info-header{
+#contact .contact-info .contact-info-header {
   margin-top: var(--spacing-unit);
   font-size: clamp(1.5rem, 4vw, 48px);
   font-family: var(--font-main);
@@ -239,7 +277,7 @@ header .glare-effect{
   text-align: center;
 }
 
-#contact .contact-info .contact-item{
+#contact .contact-info .contact-item {
   font-size: clamp(1rem, 2.5vw, 20px);
   font-family: var(--font-main);
   font-weight: var(--font-weight-extralight);
@@ -250,14 +288,9 @@ header .glare-effect{
 
 /* Tablet (schermi fino a 768px) */
 @media (max-width: 768px) {
+
   #contact .contact-form input,
-  #contact .contact-form textarea{
+  #contact .contact-form textarea {
     width: 100%;
   }
-}
-
-
-/* Mobile (schermi fino a 480px) */
-@media (max-width: 480px) {
-
 }

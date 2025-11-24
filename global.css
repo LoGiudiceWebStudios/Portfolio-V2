@@ -1,8 +1,10 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+
 html,
 body {
   width: 100vw;
@@ -11,7 +13,33 @@ body {
 }
 
 
+:root {
+  /* navbar height */
+  --nav-height: clamp(56px, 10vh, 80px);
 
+  --background-color: #0b1220;
+  --text-color: #ffffff;
+  --primary-color: white;
+  --secondary-color: #9aa6b2;
+  --card-background-color: #f7f6f6;
+  --card-box-shadow: 1px 6px 12px #208ac2;
+  --card-box-shadow-hover: 0 12px 36px rgba(6, 15, 30, 0.12);
+  --spacing-unit: clamp(1rem, 2vw, 2rem);
+  --font-main: "Lexend Deca", sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-regular: 400;
+  --font-weight-black: 900;
+
+  --btn-bg-primary: #208BC3;
+  --btn-bg-secondary: #fff;
+  --btn-bg-primary-hover: #156b9d;
+  --btn-border: white;
+}
+
+
+
+/*
 :root {
   --primary-color: #ffffff;
   --secondary-color: #BABABA;
@@ -23,18 +51,19 @@ body {
   --font-weight-extralight: 200;
   --font-weight-regular: 400;
   --font-weight-black: 900;
-  --spacing-unit: clamp(1rem, 2vw, 2rem); 
+  --spacing-unit: clamp(1rem, 2vw, 2rem);
 
   --btn-bg-primary: #208BC3;
   --btn-bg-primary-hover: #156b9d;
-}
+}*/
 
-strong{
+strong {
   font-weight: var(--font-weight-regular);
 }
-/* Button Styles */ 
 
-button{
+/* Button Styles */
+
+button {
   color: var(--primary-color);
   font-family: var(--font-main);
   font-weight: var(--font-weight-extralight);
@@ -48,17 +77,18 @@ button{
   min-width: fit-content;
   height: auto;
   white-space: nowrap;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.btn-primary{
+.btn-primary {
   border: none;
   background: var(--btn-bg-primary);
 }
 
-.btn-secondary{
-  background: none;
-  border: 1px solid white;
+.btn-secondary {
+  color: black;
+  background: var(--btn-bg-secondary);
+  border: 1px solid var(--btn-border);
 }
 
 /* Laptop (schermi fino a 1440px) */
@@ -93,16 +123,23 @@ button{
 
 
 /* a blue color as a generic focus style */
- .btn-primary:hover{
+.btn-primary:hover {
   background-color: var(--btn-bg-primary-hover);
+  transform: scale(1.05);
 }
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+}
+
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 
 /* Section Styles */
-section{
+section {
   padding: clamp(2rem, 5vw, 6rem) clamp(1.5rem, 5vw, 8rem);
   background-color: var(--section-background-color);
   display: flex;
@@ -119,7 +156,7 @@ section{
 }
 
 
-.section-header{
+.section-header {
   color: var(--primary-color);
   font-family: var(--font-main);
   font-weight: var(--font-weight-thin);
@@ -129,7 +166,7 @@ section{
   font-size: clamp(2.5rem, 5.2vw, 100px);
 }
 
-.section-subtext{
+.section-subtext {
   color: var(--secondary-color);
   font-family: var(--font-main);
   font-weight: var(--font-weight-extralight);
@@ -140,7 +177,7 @@ section{
 
 /* Form Styles */
 
-input{
+input {
   font-family: var(--font-main);
   font-size: clamp(1rem, 2.5vw, 20px);
   padding: clamp(0.75rem, 2vw, 1rem);
@@ -151,7 +188,7 @@ input{
   color: var(--primary-color);
 }
 
-textarea{
+textarea {
   font-family: var(--font-main);
   font-size: clamp(1rem, 2.5vw, 20px);
   padding: clamp(0.75rem, 2vw, 1rem);
