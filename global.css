@@ -20,8 +20,9 @@ body {
   --background-color: #0b1220;
   --text-color: #ffffff;
   --primary-color: white;
+  --primary-color-dark: #000000;
   --secondary-color: #9aa6b2;
-  --card-background-color: #f7f6f6;
+  --card-background-color: #ffffff;
   --card-box-shadow: 1px 6px 12px #208ac2;
   --card-box-shadow-hover: 0 12px 36px rgba(6, 15, 30, 0.12);
   --spacing-unit: clamp(1rem, 2vw, 2rem);
