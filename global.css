@@ -58,6 +58,16 @@ body {
   --btn-bg-primary-hover: #156b9d;
 }*/
 
+h1{
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-regular);
+}
+
+p{
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-extralight);
+}
+
 strong {
   font-weight: var(--font-weight-regular);
 }
