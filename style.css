@@ -430,3 +430,54 @@ header .glare-effect {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ── Language Toggle ── */
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 100px;
+  padding: 3px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 13px;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-regular);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  transition: background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.lang-btn.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+}
+
+.lang-btn:hover:not(.active) {
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 480px) {
+  .lang-btn {
+    padding: 5px 9px;
+    font-size: 0.72rem;
+  }
+}
