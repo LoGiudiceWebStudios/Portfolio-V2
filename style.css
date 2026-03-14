@@ -135,12 +135,33 @@ header .glare-effect {
 @media (max-width: 768px) {
 
   nav {
-    padding: clamp(1rem, 3vw, 4rem) clamp(1.5rem, 5vw, 8rem);
+    height: auto;
+    min-height: var(--nav-height);
+    padding: 0.65rem 1rem;
+    row-gap: 0.45rem;
+    align-items: center;
+  }
+
+  nav .branding .logo {
+    height: clamp(64px, 16vw, 92px);
+  }
+
+  nav .lang-toggle {
+    margin-left: auto;
+  }
+
+  nav .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: clamp(0.8rem, 2vw, 1.2rem);
+    padding-bottom: 0.2rem;
   }
 
   header {
     display: flex;
     flex-direction: column;
+    padding-top: calc(var(--nav-height) + 56px);
   }
 
   header .front-image {
@@ -173,8 +194,25 @@ header .glare-effect {
 
 /* Mobile (schermi fino a 480px) */
 @media (max-width: 480px) {
+  nav {
+    padding: 0.55rem 0.75rem;
+  }
+
+  nav .nav-links {
+    gap: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  nav .lang-toggle {
+    margin-top: 0.1rem;
+  }
+
   header .front-image>img {
     max-width: clamp(200px, 70vw, 300px);
+  }
+
+  header {
+    padding-top: calc(var(--nav-height) + 52px);
   }
 
 }
