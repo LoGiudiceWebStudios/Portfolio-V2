@@ -97,6 +97,25 @@ function initWebsiteGalleryLightbox() {
 
 // Event listener per i bottoni di navigazione
 document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector("nav");
+  const navToggle = document.querySelector(".nav-toggle");
+  const closeNavMenu = () => {
+    if (!nav || !navToggle) return;
+    nav.classList.remove("nav-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  };
+
+  if (nav && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) closeNavMenu();
+    });
+  }
+
   // Aggiungi automaticamente il click handler a tutti i bottoni con data-scroll-to
   const navButtons = document.querySelectorAll("[data-scroll-to]");
 
@@ -107,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const targetId = button.getAttribute("data-scroll-to");
         scrollTo(targetId);
+        closeNavMenu();
       });
     }
   });
@@ -119,8 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       const target = button.getAttribute("data-target") || "_blank";
       openLink(button, { target });
+      closeNavMenu();
     });
   });
+
+  document
+    .querySelectorAll("nav .nav-links a, nav .lang-btn")
+    .forEach((item) => {
+      item.addEventListener("click", closeNavMenu);
+    });
 
   initWebsiteGalleryLightbox();
 });
