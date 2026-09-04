@@ -29,27 +29,47 @@
       <li><a href="../#projects">Projects</a></li>
       <li><a href="../#contact">Contact Us</a></li>
     </ul>
+    <div class="lang-toggle" id="langToggle">
+      <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+      <button class="lang-btn" data-lang="it">🇮🇹 IT</button>
+    </div>
   </nav>
 
   <header style="min-height: 0;">
     <div class="project-header">
-      <h1>Aurum Etna Chalet Gallery</h1>
-      <p>One of the most beautiful chalets on Mount Etna</p>
-      <button class="btn-primary" style="margin: auto; margin-bottom: 20px;" data-link="https://www.aurumetnachalet.com/">VISIT WEBSITE</button>
-    </div>
-    
-  </header>
+      <div class="project-header-layout">
+        <div class="project-header-copy">
+          <h1 data-i18n-key="sc-aurum-title">Aurum Etna Chalet Gallery</h1>
+          <div class="project-page-description">
+            <p data-i18n-key="sc-aurum-p1">
+              A premium hospitality website designed to present Aurum Etna Chalet with an elegant visual identity and
+              clear booking flow.
+            </p>
+            <p data-i18n-key="sc-aurum-p2">
+              The project highlights rooms, services, and unique experiences on Mount Etna while keeping navigation
+              simple and conversion-focused.
+            </p>
+          </div>
+          <button class="btn-primary" data-link="https://www.aurumetnachalet.com/" data-i18n-key="sc-visit-website">VISIT WEBSITE</button>
+        </div>
+        <div class="project-header-showcase">
+          <img src="../assets/project7.png" alt="Aurum Etna Chalet website showcase header image">
+        </div>
+      </div>
 
-  <section class="features-section">
-    <div class="features-container">
-      <h2>Main Functionalities</h2>
-      <ul class="features-list">
-        <li>Administrator panel for all types of personalization</li>
-        <li>Online booking system</li>
-        <li>Automatic website translation</li>
-      </ul>
+      <details class="project-features-accordion">
+        <summary>
+          <span data-i18n-key="sc-key-features">Key Features</span>
+          <span class="project-features-plus" aria-hidden="true">+</span>
+        </summary>
+        <ul class="project-features-list">
+          <li data-i18n-key="sc-aurum-f1" data-i18n-type="html"><strong>Online Booking:</strong> Streamlined booking process to improve direct reservations.</li>
+          <li data-i18n-key="sc-aurum-f2" data-i18n-type="html"><strong>Multilingual Experience:</strong> Built-in translation for international guests.</li>
+          <li data-i18n-key="sc-aurum-f3" data-i18n-type="html"><strong>Admin Personalization:</strong> Flexible content and section management from the admin side.</li>
+        </ul>
+      </details>
     </div>
-  </section>
+  </header>
 
   <section class="gallery gallery-landscape">
     <div class="gallery-grid">

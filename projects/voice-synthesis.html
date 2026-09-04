@@ -29,12 +29,44 @@
       <li><a href="../#projects">Projects</a></li>
       <li><a href="../#contact">Contact Us</a></li>
     </ul>
+    <div class="lang-toggle" id="langToggle">
+      <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+      <button class="lang-btn" data-lang="it">🇮🇹 IT</button>
+    </div>
   </nav>
 
   <header style="min-height: 0;">
     <div class="project-header">
-      <h1>Voice Synthesis</h1>
-      <p>Replicating the Human Voice with Machine Learning</p>
+      <div class="project-header-layout">
+        <div class="project-header-copy">
+          <h1 data-i18n-key="sc-voice-title">Voice Synthesis</h1>
+          <div class="project-page-description">
+            <p data-i18n-key="sc-voice-p1">
+              Research project focused on replicating the human voice using machine learning techniques and modern
+              Text-to-Speech workflows.
+            </p>
+            <p data-i18n-key="sc-voice-p2">
+              This showcase presents the full study material, methodology, and practical outcomes in a structured
+              document format.
+            </p>
+          </div>
+        </div>
+        <div class="project-header-showcase">
+          <img src="../assets/project13.png" alt="Voice Synthesis project showcase header image">
+        </div>
+      </div>
+
+      <details class="project-features-accordion">
+        <summary>
+          <span data-i18n-key="sc-key-features">Key Features</span>
+          <span class="project-features-plus" aria-hidden="true">+</span>
+        </summary>
+        <ul class="project-features-list">
+          <li data-i18n-key="sc-voice-f1" data-i18n-type="html"><strong>Technical Framework:</strong> Overview of model training and synthesis pipeline.</li>
+          <li data-i18n-key="sc-voice-f2" data-i18n-type="html"><strong>Academic Context:</strong> Built within a university research environment.</li>
+          <li data-i18n-key="sc-voice-f3" data-i18n-type="html"><strong>Complete Documentation:</strong> Embedded PDF with direct access to all project sections.</li>
+        </ul>
+      </details>
     </div>
   </header>
 
