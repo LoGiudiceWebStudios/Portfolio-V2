@@ -1,7 +1,7 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: var(--font-family);
+  font-family: var(--font-main);
   font-size: var(--font-size);
   margin: 0;
   padding: 0;
@@ -40,7 +40,7 @@ nav .branding {
 }
 
 nav .branding .logo {
-  height: clamp(80px, 12vw, 180px);
+  height: clamp(70px, 10vw, 130px);
   width: auto;
   object-fit: contain;
 }
@@ -54,12 +54,20 @@ nav .nav-links {
 
 /* Header Styles */
 
+.index{
+  padding-top: var(--nav-height) !important;
+  height: 80vh !important;
+  width: 100vw;
+  min-height:unset !important;
+}
+
 header {
-  /* tieni la navbar in considerazione: spingi il contenuto sotto e mantieni l'altezza visibile */
   padding-top: var(--nav-height);
   min-height: calc(90vh - var(--nav-height));
   width: 100vw;
 }
+
+
 
 header .front-content {
   display: flex;
@@ -81,13 +89,6 @@ header .front-text {
   line-height: 150%;
 }
 
-header .front-text>span {
-  background: linear-gradient(90deg, #157DC1 -1.52%, #6DE8CE 19.87%, #B87CFA 41.26%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 header .front-subtext {
   color: var(--secondary-color);
   font-size: clamp(1rem, 2.5vw, 20px);
@@ -105,7 +106,7 @@ header .front-image>img {
   top: 5%;
   left: clamp(1rem, 61.8vw, 1187px);
   width: 100%;
-  max-width: min(600px, calc(100vw - clamp(1rem, 61.8vw, 1187px) - 2rem));
+  max-width: min(600px, calc(88vw - clamp(1rem, 61.8vw, 1187px) - 2rem));
   height: auto;
   border-radius: 16px;
   object-fit: cover;
@@ -299,6 +300,10 @@ header .glare-effect {
   margin-bottom: var(--spacing-unit);
 }
 
+.project-page-description {
+  width: 60%;
+}
+
 /* Contact Section */
 
 #contact .contact-form {
@@ -388,6 +393,7 @@ header .glare-effect {
   flex-direction: column;
   padding: 6rem 2rem 2rem;
   text-align: center;
+  align-items: center;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   gap: 3vh;
 }

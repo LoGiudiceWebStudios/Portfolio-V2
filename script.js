@@ -92,9 +92,13 @@ const TRANSLATIONS = {
 
     // Projects section
     "section-projects-header": "Our projects",
+    "section-projects-subtext":
+      "Discover our latest work across different industries.",
     "btn-view-project": "VIEW PROJECT",
 
-    // Project descriptions (in grid order)
+    // Project descriptions
+    "proj-desc-15":
+      "Qi App brings the experience of your restaurant right to your smartphone.",
     "proj-desc-1":
       "Voice Synthesis: Replicating the Human Voice with Machine Learning, explores the technical process of training custom voice models. Developed by Andrea Lo Giudice at the University of Catania, it focuses on Text-to-Speech (TTS) technology to convert written text into realistic spoken audio.",
     "proj-desc-2": "Clubify, when the movement meets the beat.",
@@ -140,9 +144,13 @@ const TRANSLATIONS = {
 
     // Projects section
     "section-projects-header": "I nostri progetti",
+    "section-projects-subtext":
+      "Scopri i nostri lavori più recenti in diversi settori.",
     "btn-view-project": "VEDI PROGETTO",
 
-    // Project descriptions (stessa ordine del grid)
+    // Project descriptions
+    "proj-desc-15":
+      "Qi App porta l'esperienza del tuo ristorante direttamente sul tuo smartphone.",
     "proj-desc-1":
       "Voice Synthesis: Replicare la voce umana con il Machine Learning. Esplora il processo tecnico di addestramento di modelli vocali personalizzati. Sviluppato da Andrea Lo Giudice all'Università di Catania, con focus sulla tecnologia Text-to-Speech (TTS).",
     "proj-desc-2": "Clubify, quando il movimento incontra il ritmo.",
@@ -210,98 +218,17 @@ const I18N_MAP = [
     selector: "#projects .section-header",
     type: "text",
   },
+  {
+    key: "section-projects-subtext",
+    selector: "#projects .section-subtext",
+    type: "text",
+  },
 
   // "View Project" buttons – all project cards at once
   {
     key: "btn-view-project",
     selector: "#projects .project-card .btn-primary",
     type: "text-all",
-  },
-
-  // Project descriptions
-  {
-    key: "proj-desc-1",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(1) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-2",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(2) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-3",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(3) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-4",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(4) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-5",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(5) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-6",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(6) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-7",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(7) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-8",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(8) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-9",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(9) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-10",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(10) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-11",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(11) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-12",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(12) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-13",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(13) .project-description",
-    type: "text",
-  },
-  {
-    key: "proj-desc-14",
-    selector:
-      "#projects .projects-grid .project-card:nth-child(14) .project-description",
-    type: "text",
   },
 
   // Contact section
@@ -371,6 +298,15 @@ function applyLang(lang) {
       else if (type === "placeholder") el.placeholder = value;
     }
   });
+
+  // Project descriptions are keyed per-card, so order can change safely.
+  document
+    .querySelectorAll("#projects .project-description[data-i18n-key]")
+    .forEach((el) => {
+      const key = el.getAttribute("data-i18n-key");
+      if (!key || t[key] === undefined) return;
+      el.textContent = t[key];
+    });
 
   // Persist preference
   localStorage.setItem("lang", lang);

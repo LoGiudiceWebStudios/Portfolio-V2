@@ -15,7 +15,7 @@ body {
 
 :root {
   /* navbar height */
-  --nav-height: clamp(56px, 10vh, 80px);
+  --nav-height: clamp(50px, 8vh, 60px);
 
   --background-color: #0b1220;
   --text-color: #ffffff;
@@ -29,7 +29,9 @@ body {
   --font-main: "Lexend Deca", sans-serif;
   --font-weight-thin: 100;
   --font-weight-extralight: 200;
+  --font-weight-light: 300;
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-weight-black: 900;
 
   --btn-bg-primary: #208BC3;
@@ -151,7 +153,7 @@ a {
 
 /* Section Styles */
 section {
-  padding: clamp(2rem, 5vw, 6rem) clamp(1.5rem, 5vw, 8rem);
+  padding: clamp(1.25rem, 3.5vw, 4rem) clamp(1.5rem, 5vw, 8rem) clamp(2rem, 5vw, 6rem);
   background-color: var(--section-background-color);
   display: flex;
   flex-direction: column;
@@ -174,13 +176,13 @@ section {
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
-  font-size: clamp(2.5rem, 5.2vw, 100px);
+  font-size: clamp(2rem, 3.2vw, 80px);
 }
 
 .section-subtext {
-  color: var(--secondary-color);
+  color: black;
   font-family: var(--font-main);
-  font-weight: var(--font-weight-extralight);
+  font-weight: var(--font-weight-light);
   font-style: normal;
   text-align: center;
   font-size: clamp(1rem, 2.5vw, 20px);
