@@ -18,7 +18,7 @@ nav {
   backdrop-filter: blur(5.9px);
   -webkit-backdrop-filter: blur(5.9px);
 
-  width: 100vw;
+  width: 100%;
   height: var(--nav-height);
   /* <-- usa la variabile */
   display: flex;
@@ -82,7 +82,7 @@ nav .nav-toggle span {
 .index{
   padding-top: var(--nav-height) !important;
   height: 80vh !important;
-  width: 100vw;
+  width: 100%;
   min-height:unset !important;
 }
 @media (max-width: 768px) {
@@ -96,7 +96,7 @@ nav .nav-toggle span {
 header {
   padding-top: var(--nav-height);
   min-height: calc(90vh - var(--nav-height));
-  width: 100vw;
+  width: 100%;
 }
 
 
@@ -168,15 +168,21 @@ header .glare-effect {
 @media (max-width: 768px) {
 
   nav {
-    height: auto;
-    min-height: var(--nav-height);
-    padding: 0.65rem 1rem;
-    row-gap: 0.45rem;
+    height: var(--nav-height);
+    min-height: 0;
+    padding: 0.4rem 0.9rem;
+    row-gap: 0;
     align-items: center;
   }
 
+  nav.nav-open {
+    height: auto;
+    min-height: var(--nav-height);
+    row-gap: 0.45rem;
+  }
+
   nav .branding .logo {
-    height: clamp(64px, 16vw, 92px);
+    height: clamp(42px, 9vw, 52px);
   }
 
   nav .branding {
@@ -297,7 +303,11 @@ header .glare-effect {
 /* Mobile (schermi fino a 480px) */
 @media (max-width: 480px) {
   nav {
-    padding: 0.55rem 0.75rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  nav .branding .logo {
+    height: clamp(38px, 11vw, 46px);
   }
 
   nav .nav-links {
