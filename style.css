@@ -87,7 +87,9 @@ nav .nav-toggle span {
 }
 @media (max-width: 768px) {
 .index{
-  height: 95vh !important;
+  height: auto !important;
+  min-height: 95vh !important;
+  overflow: hidden;
 
 }
 }
@@ -270,6 +272,7 @@ header .glare-effect {
     display: flex;
     flex-direction: column;
     padding-top: calc(var(--nav-height) + 56px);
+    overflow: hidden;
   }
 
   header .front-image {
@@ -281,7 +284,10 @@ header .glare-effect {
   header .front-image>img {
     position: relative;
     left: 0;
+    width: 100%;
     max-width: clamp(250px, 60vw, 400px);
+    max-height: 40vh;
+    object-fit: contain;
   }
 
   header .front-content .front-subtext {
